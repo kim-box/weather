@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "weather",
-    "slug": "weather",
+    "name": "weatherReact",
+    "slug": "weatherreact",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "it shows weather and temperature by user location. it will updated very gradually until the end of this month(2021.2). it is copycat of ReactNative instruction. i made it with ReactNative and openwheater API."
   }
 }
