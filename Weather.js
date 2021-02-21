@@ -84,22 +84,20 @@ const weatherIcon = {
 export default function Weather({ temp, condition, description }) {
   return (
     <LinearGradient
-      colors={weatherIcon[condition].gradients}
+      colors={weatherIcon.Thunderstorm.gradients}
       style={styles.container}
     >
       <View style={styles.container}>
-        <View style={styles.container}>
-          <Text style={styles.text}>{condition}</Text>
-          <Ionicons
-            name={weatherIcon[condition].Icon}
-            size={90}
-            color={weatherIcon[condition].color}
-          />
-        </View>
-        <View style={styles.container}>
-          <Text style={styles.text}>{temp}℃</Text>
-          <Text style={styles.text}>{description}</Text>
-        </View>
+        <Text style={styles.condition}>Thunderstorm</Text>
+        <Ionicons
+          name={weatherIcon.Thunderstorm.Icon}
+          size={90}
+          color={weatherIcon.Thunderstorm.color}
+        />
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.text}>{temp}℃</Text>
+        <Text style={styles.text}>{description}</Text>
       </View>
     </LinearGradient>
   );
@@ -131,7 +129,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  condition: {
+    fontSize: 55,
+    fontWeight: "100",
+  },
   text: {
-    fontSize: 50,
+    fontSize: 60,
+    fontWeight: "500",
+  },
+  borderContainer: {
+    flex: 1,
+    borderWidth: 2,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
