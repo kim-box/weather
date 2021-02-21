@@ -88,7 +88,7 @@ export default function Weather({ temp, condition, description }) {
       style={styles.container}
     >
       <View style={styles.container}>
-        <Text style={styles.condition}>Thunderstorm</Text>
+        <Text style={styles.condition}>{condition}</Text>
         <Ionicons
           name={weatherIcon[condition].Icon}
           size={90}
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 1,
   },
   condition: {
     fontSize: 55,
