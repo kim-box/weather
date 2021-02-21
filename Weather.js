@@ -10,79 +10,78 @@ const weatherIcon = {
     gradients: ["#077637", "#8AFCFF"],
     color: "#cff0ff",
   },
-  color: "",
   Thunderstorm: {
     Icon: "thunderstorm",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#41228b", "#342319"],
+    color: "#ffff54",
   },
   Drizzle: {
-    Icon: "md-water",
-    gradients: ["", ""],
-    color: "",
+    Icon: "water-outline",
+    gradients: ["#fbffff", "#b2797e"],
+    color: "#f3f4ff",
   },
   Rain: {
     Icon: "water",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#385885", "#c88927"],
+    color: "#f3f4ff",
   },
   Snow: {
     Icon: "snow",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#84fbff", "#95ccc7"],
+    color: "#b3ffd0",
   },
   Mist: {
-    Icon: "recorder-one-outline",
-    gradients: ["", ""],
-    color: "",
+    Icon: "reorder-two-outline",
+    gradients: ["#96c1da", "#376379"],
+    color: "#b6acac",
   },
   Fog: {
-    Icon: "recoder-two-outline",
-    gradients: ["", ""],
-    color: "",
+    Icon: "reorder-three-outline",
+    gradients: ["#86a4b7", "#2c495a"],
+    color: "#b6acac",
   },
   Haze: {
-    Icon: "recoder-three-outline",
-    gradients: ["", ""],
-    color: "",
+    Icon: "reorder-four-outline",
+    gradients: ["#657986", "#222530"],
+    color: "#b6acac",
   },
   Smoke: {
     Icon: "bonfire",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#ea649c", "#80947c"],
+    color: "#7f8685",
   },
   Ash: {
     Icon: "bonfire-outline",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#969696", "#253a33"],
+    color: "#7d7d7d",
   },
   Dust: {
     Icon: "bonfire-outline",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#e8dede", "#3a333a"],
+    color: "#ffffff",
   },
   Sand: {
     Icon: "md-hourglass-outline",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#fff48e", "#e87962"],
+    color: "#fac263",
   },
   Squall: {
     Icon: "boat-outline",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#cf7adc", "#abcdef"],
+    color: "#152b8e",
   },
   Tornado: {
     Icon: "finger-print",
-    gradients: ["", ""],
-    color: "",
+    gradients: ["#ff6bad", "#83ffa4"],
+    color: "#f0ffea",
   },
   Clear: {
     Icon: "paper-plane-outline",
-    gradients: ["#cf7adc", "#abcdef"],
-    color: "#df3fca",
+    gradients: ["#e8dede", "#abcdef"],
+    color: "#000000",
   },
 };
-export default function Weather({ temp, condition }) {
+export default function Weather({ temp, condition, description }) {
   return (
     <LinearGradient
       colors={weatherIcon[condition].gradients}
@@ -90,7 +89,6 @@ export default function Weather({ temp, condition }) {
     >
       <View style={styles.container}>
         <View style={styles.container}>
-          <Text style={styles.text}>{temp}</Text>
           <Text style={styles.text}>{condition}</Text>
           <Ionicons
             name={weatherIcon[condition].Icon}
@@ -98,7 +96,10 @@ export default function Weather({ temp, condition }) {
             color={weatherIcon[condition].color}
           />
         </View>
-        <View style={styles.container}></View>
+        <View style={styles.container}>
+          <Text style={styles.text}>{temp}℃</Text>
+          <Text style={styles.text}>{description}</Text>
+        </View>
       </View>
     </LinearGradient>
   );
