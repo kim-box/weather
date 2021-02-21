@@ -84,15 +84,15 @@ const weatherIcon = {
 export default function Weather({ temp, condition, description }) {
   return (
     <LinearGradient
-      colors={weatherIcon.Thunderstorm.gradients}
+      colors={weatherIcon[condition].gradients}
       style={styles.container}
     >
       <View style={styles.container}>
         <Text style={styles.condition}>Thunderstorm</Text>
         <Ionicons
-          name={weatherIcon.Thunderstorm.Icon}
+          name={weatherIcon[condition].Icon}
           size={90}
-          color={weatherIcon.Thunderstorm.color}
+          color={weatherIcon[condition].color}
         />
       </View>
       <View style={styles.container}>
