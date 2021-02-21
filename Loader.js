@@ -5,7 +5,7 @@ export default function Loader() {
   return (
     <View style={styles.container}>
       <Text style={(styles.texts, styles.orangeBack)}>deadly Hot Weather</Text>
-      <Text style={(styles.texts, styles.cyanBack)}>O O O O !</Text>
+      <Text style={(styles.texts, styles.cyanBack)}>Loading</Text>
     </View>
   );
 }
@@ -31,5 +31,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
     flex: 1,
     backgroundColor: "cyan",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

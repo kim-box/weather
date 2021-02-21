@@ -88,16 +88,18 @@ export default function Weather({ temp, condition, description }) {
       style={styles.container}
     >
       <View style={styles.container}>
-        <Text style={styles.condition}>{condition}</Text>
-        <Ionicons
-          name={weatherIcon[condition].Icon}
-          size={90}
-          color={weatherIcon[condition].color}
-        />
-      </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>{temp}℃</Text>
-        <Text style={styles.text}>{description}</Text>
+        <View style={styles.weatherContainer}>
+          <Text style={styles.conditionText}>{condition}</Text>
+          <Ionicons
+            name={weatherIcon[condition].Icon}
+            size={140}
+            color={weatherIcon[condition].color}
+          />
+        </View>
+        <View style={styles.detailContainer}>
+          <Text style={styles.text}>{temp}℃</Text>
+          <Text style={styles.text}>{description}</Text>
+        </View>
       </View>
     </LinearGradient>
   );
@@ -128,20 +130,25 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 1,
   },
-  condition: {
-    fontSize: 55,
-    fontWeight: "100",
-  },
-  text: {
-    fontSize: 60,
-    fontWeight: "500",
-  },
-  borderContainer: {
-    flex: 1,
-    borderWidth: 2,
+  weatherContainer: {
+    flex: 3,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 1,
+  },
+  detailContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 0,
+  },
+  conditionText: {
+    fontSize: 55,
+    fontWeight: "300",
+  },
+  text: {
+    fontSize: 27,
+    fontWeight: "800",
   },
 });
